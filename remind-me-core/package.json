@@ -1,9 +1,13 @@
 {
   "name": "remind-me-core",
   "version": "0.0.1",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.19.2",
+    "is-wsl": "^3.1.0",
+    "node-notifier": "^10.0.1",
+    "sherlockjs": "^1.4.2"
+  },
   "main": "./index.js",
   "module": "./index.mjs",
-  "typings": "./index.d.ts",
-  "private": true
+  "typings": "./index.d.ts"  
 }
