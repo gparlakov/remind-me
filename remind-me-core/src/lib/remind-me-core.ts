@@ -1,39 +1,24 @@
 import notifier from 'node-notifier';
 import isWsl from 'is-wsl';
-// import sherlock from 'sherlockjs';
-// import express from 'express';
+import sherlock from 'sherlockjs';
 
-// const app = express()
+export function parse(text: string): {
+  message: string;
+  startTime: Date;
+  ticks: number;
+} {
+  const { eventTitle, startDate } = sherlock.parse(text) as {eventTitle: string, startDate: string};
 
-// app.post('/', (req, res) => {
-//   if(req.body) {
+  const start = new Date(startDate);
+  const ticks = start.valueOf() - new Date().valueOf();
 
-//     const event = sherlock.parse(req.body);
+  return { message: eventTitle, ticks: ticks, startTime: start };
+}
 
-//     console.log(event)
-
-//     res.json({});
-//   }
-//   res.status(400)
-
-//   res.json({error: 'please provide event'})
-// })
-
-// export function remindMeCore() {
-//   notifier.notify({message: 'test', closeLabel: 'close', icon: ''})
-// }
-
-function notify(x: {title: string, message: string }) {
+export function notify(x: { title: string; message: string }) {
   if (isWsl) {
     new notifier.WindowsBalloon({}).notify(x);
   } else {
     notifier.notify(x);
   }
 }
-setTimeout(() => notify({title: 'test', message: 'message'}), 2000)
-console.log('------ ended');
-
-// app.listen(3000)
-
-// start a server
-// listen for requests and start timeout and/or interval

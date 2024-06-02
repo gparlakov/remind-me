@@ -1,13 +1,16 @@
 {
-  "name": "remind-me-core",
-  "version": "0.0.1",
+  "name": "rmnd",
+  "version": "0.0.1-7",
   "dependencies": {
-    "express": "^4.19.2",
     "is-wsl": "^3.1.0",
     "node-notifier": "^10.0.1",
     "sherlockjs": "^1.4.2"
   },
-  "main": "./index.js",
-  "module": "./index.mjs",
-  "typings": "./index.d.ts"  
+  "module": "./index.js",
+  "typings": "./index.d.ts" ,
+  "type": "module",
+  "bin": {
+    "remind": "./index.js",
+    "rmnd": "./index.js"
+  }
 }

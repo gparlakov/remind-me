@@ -44,8 +44,7 @@ export default defineConfig({
     rollupOptions: {
       // External packages that should not be bundled into your library.
       external: [],
-      input: ['remind-me-core/src/index.ts'],
-      
+      input: ['remind-me-core/src/index.ts'], 
     },
   },
 
