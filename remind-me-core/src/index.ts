@@ -1,11 +1,19 @@
 #!/usr/bin/env node
 
 import { notify, parse } from './lib/remind-me-core';
+import {CronJob} from 'cron';
 
 const input = [...process.argv].filter((v, i) => i > 1).join(' ');
 
-console.log('parsing input', input)
+const { message, startTime, link } = parse(input);
 
-const { message, ticks } = parse(input);
+console.log(`will notify "${message}" at ${startTime.toISOString()} and go to link ${link}`);
 
-setTimeout(() => notify({ title: 'Remind-me', message }), ticks);
+const job = new CronJob(startTime, function () {
+    notify({ title: 'Remind-me', message, link })
+    job.stop();
+});
+job.start();
+
+process.exitCode = 0;
+

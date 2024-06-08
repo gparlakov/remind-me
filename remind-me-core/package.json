@@ -1,9 +1,10 @@
 {
   "name": "rmnd",
-  "version": "0.0.1-7",
+  "version": "0.0.2",
   "dependencies": {
-    "is-wsl": "^3.1.0",
+    "cron": "^3.1.7",
     "node-notifier": "^10.0.1",
+    "open": "^10.1.0",
     "sherlockjs": "^1.4.2"
   },
   "module": "./index.js",

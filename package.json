@@ -45,9 +45,10 @@
   },
   "nx": {},
   "dependencies": {
+    "cron": "^3.1.7",
     "express": "^4.19.2",
-    "is-wsl": "^3.1.0",
     "node-notifier": "^10.0.1",
+    "open": "^10.1.0",
     "sherlockjs": "^1.4.2"
   }
 }
