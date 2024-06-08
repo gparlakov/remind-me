@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "master",
-  "nxCloudAccessToken": "MTk0N2ZlYzMtMDk3OS00OTFkLTllNTUtMWJjZmVhMDI0YjcwfHJlYWQtd3JpdGU=",
+  "_nxCloudAccessToken": "MTk0N2ZlYzMtMDk3OS00OTFkLTllNTUtMWJjZmVhMDI0YjcwfHJlYWQtd3JpdGU=",
   "targetDefaults": {
     "@nx/vite:build": {
       "cache": true,
