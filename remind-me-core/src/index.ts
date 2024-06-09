@@ -10,7 +10,7 @@ const { message, startTime, link } = parse(input);
 console.log(`will notify "${message}" at ${startTime.toISOString()} and go to link ${link}`);
 
 const job = new CronJob(startTime, function () {
-    notify({ title: 'Remind-me', message, link })
+    notify({ title: 'Remind-me', message: `${message} going to ${link}`, link })
     job.stop();
 });
 job.start();
